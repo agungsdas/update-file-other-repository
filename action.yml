@@ -1,0 +1,21 @@
+name: 'Update File Other Repository'
+description: 'Update file to other Repository'
+inputs:
+  target-repository:
+    description: 'Target Repository'
+    required: true
+  author-name:
+    description: 'Git Commit Author Name'
+    required: true
+  author-email:
+    description: 'Git Commit Author Name'
+    required: true
+  commit-message:
+    description: 'Commit Message'
+    required: false
+  script:
+    description: 'Script'
+    required: false
+runs:
+  using: 'node20'
+  main: 'index.js'
