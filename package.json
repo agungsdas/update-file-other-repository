@@ -5,10 +5,17 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "start": "node ./index.js",
+    "package": "ncc build index.js -o dist"
+  },
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@actions/exec": "^1.1.1",
     "@actions/github": "^6.0.0",
     "dayjs": "^1.11.10"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
   }
 }
