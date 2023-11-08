@@ -4,6 +4,9 @@ inputs:
   target-repository:
     description: 'Target Repository'
     required: true
+  target-brabch:
+    description: 'Target Branch'
+    required: false
   author-name:
     description: 'Git Commit Author Name'
     required: true
