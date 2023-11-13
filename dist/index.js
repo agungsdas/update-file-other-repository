@@ -31420,6 +31420,7 @@ const dayjs = __nccwpck_require__(7401);
 
 const run = async () => {
   const targetRepository = core.getInput('target-repository');
+  const targetBranch = core.getInput('target-branch');
   const authorName = core.getInput('author-name');
   const authorEmail = core.getInput('author-email');
   const commitMessage = core.getInput('commit-message') || `Auto Commit by ${authorName} (${authorEmail}) at ${dayjs().format('DD/MM/YYYY HH:mm:ss Z')}`;
@@ -31442,6 +31443,12 @@ const run = async () => {
   await exec.exec(`git config user.email ${authorEmail}`, [], {
     cwd: 'repo'
   })
+
+  if (targetBranch) {
+    await exec.exec(`git checkout ${targetBranch}`, [], {
+      cwd: 'repo'
+    })
+  }
 
   if (script) {
     execSync(script, {
