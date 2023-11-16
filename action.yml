@@ -4,7 +4,7 @@ inputs:
   target-repository:
     description: 'Target Repository'
     required: true
-  target-brabch:
+  target-branch:
     description: 'Target Branch'
     required: false
   author-name:
